@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('users_id')->references('id')->on('users');
+            $table->string('priod');
+            $table->integer('nominal');
+            $table->string('officer');
             $table->timestamps();
         });
     }
