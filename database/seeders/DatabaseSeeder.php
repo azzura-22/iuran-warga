@@ -21,5 +21,11 @@ class DatabaseSeeder extends Seeder
             'password' => '123',
             'level' => 'warga'
         ]);
+        User::create([
+            'name' => 'admin',
+            'username' => 'admin11',
+            'password' => '222',
+            'level' => 'admin'
+        ]);
     }
 }

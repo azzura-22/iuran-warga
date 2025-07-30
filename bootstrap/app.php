@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         //
         $middleware->appendToGroup('warga',[authwarga::class]);
+        $middleware->appendToGroup('admin', [\App\Http\Middleware\authadmin::class]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
