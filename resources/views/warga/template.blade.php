@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" href="{{asset('bootstrap1/css/bootstrap.min.css')}}">
 <link rel="stylesheet" href="{{asset('asset/fontawesome-free-6.7.2-web/css/all.min.css')}}">
 <style>
@@ -39,13 +38,13 @@
         <h2 class="text-center mb-4 text-white">citizen fees</h2>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active text-white" href="/home/admin/">Dashboard</a>
+                <a class="nav-link active text-white" href="">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="{{route('payment')}}">payment</a>
+                <a class="nav-link text-white" href="#">dues</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">civilians</a>
+                <a class="nav-link text-white" href="#">payment</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{route('logout')}}">logout</a>

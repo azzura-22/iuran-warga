@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('priod');
             $table->integer('nominal');
-            $table->enum('status',['0','1']);
             $table->timestamps();
         });
     }

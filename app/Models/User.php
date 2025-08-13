@@ -48,6 +48,6 @@ class User extends Authenticatable
         ];
     }
     public function member(){
-        return $this -> hasMany(User::class,'users_id');
+        return $this -> hasOne(member::class,'users_id');
     }
 }

@@ -11,11 +11,13 @@ class authwarga
 {
     public function handle(Request $request, Closure $next): Response
     {
-        if (Auth::check() && Auth::user()->level === 'admin') {
-            return $next($request);
+        if (Auth::check()) {
+            if (Auth::user()->level === 'warga') {
+                return $next($request);
+            }
+            return redirect('/');
         }
-
-        return redirect('/')->with('error', 'Hanya admin yang boleh mengakses.');
+        return redirect('/');
     }
 }
 
