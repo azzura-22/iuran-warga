@@ -8,7 +8,10 @@ class categori extends Model
 {
     //
     protected $guarded =[];
-    // public function categori(){
-    //     return $this->hasMany(categori::class,'categoris_id');
-    // }
+    public function member(){
+        return $this->hasMany(member::class,'categoris_id');
+    }
+    public function history(){
+        return $this->hasMany(history::class,'categoris_id');
+    }
 }

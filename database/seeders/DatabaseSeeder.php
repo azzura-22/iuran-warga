@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
             'level' => 'admin'
         ]);
         categori::create([
-            'priod' => 'mingguan',
+            'priod' => 'bulanan',
             'nominal' => 100000,
         ]);
         member::create([
@@ -51,13 +51,6 @@ class DatabaseSeeder extends Seeder
             'tanggal_lahir' => '2000-01-01',
             'categoris_id' => 1,
             'foto' => null,
-        ]);
-        payment::create([
-            'users_id' => 1,
-            'categoris_id' => 1,
-            'priod' => 'mingguan',
-            'nominal' => 100000,
-            'status' => '1',
         ]);
     }
 }

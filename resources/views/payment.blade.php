@@ -22,43 +22,26 @@
         @csrf
         <thead>
             <tr>
-                <th>Id</th>
+                <th>No</th>
                 <th>User</th>
                 <th>Nominal</th>
                 <th>Periode</th>
-                <th>Status</th>
-                <th>Date</th>
+                <th>Total tagihan tersisa</th>
                 <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($payment as $item)
-            <form action="{{ route('updatepayment', Crypt::encrypt($item->id)) }}" method="POST">
-                @csrf
-                <tr>
-                    <td>{{ $item->id }}</td>
-                    <td>{{ $item->user->name }}</td>
-                    <td>Rp. {{ number_format($item->nominal, 0, ',', '.') }}</td>
-                    <td>{{ $item->priod }}</td>
-                    <td>
-                        @if($item->status == '1')
-                            <span class="badge bg-success">Paid</span>
-                        @else
-                            <span class="badge bg-danger">Unpaid</span>
-                        @endif
-                    </td>
-                    <td>{{ $item->created_at->format('d-m-Y') }}</td>
-                    <td>
-                        <select name="status">
-                            <option value="0" {{ $item->status == 0 ? 'selected' : '' }}>Unpaid</option>
-                            <option value="1" {{ $item->status == 1 ? 'selected' : '' }}>Paid</option>
-                        </select>
-                    </td>
-                    <td>
-                        <button type="submit" class="btn btn-sm btn-success">Simpan</button>
-                    </td>
-                </tr>
-            </form>
+            @foreach($user as $u)
+            <tr>
+                <td>{{ $loop->iteration }}</td>
+                <td>{{ $u->name }}</td>
+                <td>{{ $u->member->categori->nominal }}</td>
+                <td>{{ $u->member->categori->priod }}</td>
+                <td>{{ $u->total_tagihan }}</td>
+                <td>
+                    <a href="{{ route('payment-detail', $u->id) }}" class="btn btn-primary">Lihat Histori</a>
+                </td>
+            </tr>
             @endforeach
         </tbody>
     </table>

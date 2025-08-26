@@ -18,15 +18,19 @@
     <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
     <div class="container border border-dark rounded shadow p-4" style="max-width: 500px;">
         <form action="auth/warga" method="POST">
+            <div class=" d-flex justify-content-center ">
+                <h2>Iuran warga WarungCikopi</h2>
+            </div>
+            <hr>
             @csrf
             <div class="d-flex justify-content-center align-items-center mb-4 gap-2">
                 <i class="fa-solid fa-circle-user fa-2x"></i>
-                <h2 class="mb-0">Login</h2>
+                <h3 class="mb-0">Login</h3>
             </div>
 
             <div class="mb-3">
                 <label for="username" class="form-label">username</label>
-                <input type="text" name="username" id="username" class="form-control" required>
+                <input type="text" name="username" id="username" class="form-control" required >
             </div>
 
             <div class="mb-3">

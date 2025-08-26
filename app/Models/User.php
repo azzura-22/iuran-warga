@@ -50,4 +50,7 @@ class User extends Authenticatable
     public function member(){
         return $this -> hasOne(member::class,'users_id');
     }
+    public function payment(){
+        return $this -> hasMany(payment::class,'users_id');
+    }
 }

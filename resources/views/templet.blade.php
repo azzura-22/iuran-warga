@@ -45,7 +45,10 @@
                 <a class="nav-link text-white" href="{{route('payment')}}">payment</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">civilians</a>
+                <a class="nav-link text-white" href="{{route('officer')}}">officer</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="{{route('payment')}}">payment</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{route('logout')}}">logout</a>

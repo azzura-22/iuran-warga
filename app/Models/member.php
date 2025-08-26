@@ -11,7 +11,10 @@ class member extends Model
     public function User(){
         return $this->belongsTo(User::class,'users_id');
     }
-    // public function categori(){
-    //     return $this-> belongsTo(categori::class,'categoris_id');
-    // }
+    public function categori(){
+        return $this-> belongsTo(categori::class,'categoris_id');
+    }
+    public function history(){
+        return $this->hasMany(history::class,'members_id');
+    }
 }

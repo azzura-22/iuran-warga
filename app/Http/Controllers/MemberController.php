@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\categori;
 use App\Models\member;
 use App\Models\User;
+use DateTime;
 use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -37,6 +39,7 @@ class MemberController extends Controller
     }
     public function regis(){
         $data['user'] = User::all();
+        $data['categoris'] = categori::all();
         return view('register', $data);
     }
     public function register(Request $request){
@@ -196,5 +199,20 @@ class MemberController extends Controller
         ]);
 
         return redirect()->route('homewarga')->with('message', 'Profile updated successfully');
+    }
+    public function st (Request $request){
+
+        $data['payment'] = Auth::user()->payment;
+
+        $tanggalawal = new DateTime("2025-01-01");
+        $tanggalsekarang = new DateTime(date('Y-m-d'));
+
+        $selisih = $tanggalawal->diff($tanggalsekarang);
+        $totalbulan = ($selisih->y * 12) + $selisih->m;
+        $totalpaid = Auth::user()->payment->where('status', '1')->count();
+
+        $data['total_tagihan'] = $totalbulan - $totalpaid;
+
+        return view('warga.payment', $data);
     }
 }

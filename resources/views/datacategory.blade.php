@@ -26,7 +26,7 @@
         <tr>
             <td>{{ $item->id }}</td>
             <td>Rp. {{ $item->nominal }}</td>
-            <td>{{ $item->periode }}</td>
+            <td>{{ $item->priod }}</td>
             <td>
                <a href="{{ route('editcategory',Crypt::encrypt($item->id)) }}"class="btn btn-info">Edit</a>
                 <a href="{{route('deletecategory',Crypt::encrypt($item->id))}}"class="btn btn-danger" onclick="return  confirm('Delete this data')">delete</a>

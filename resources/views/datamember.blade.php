@@ -11,7 +11,7 @@
             <p class="card-text">Level: {{ $item->level }}</p>
             <p class="card-text">Created at: {{ $item->created_at }}</p>
             <a href="{{route('editmember',Crypt::encrypt($item->id))}}" class="btn btn-primary">Edit</a>
-            <a href="{{route('deletemember',Crypt::encrypt($item->id))}}" class="btn btn-danger">Delete</a>
+            <a href="{{route('deletemember',Crypt::encrypt($item->id))}}" class="btn btn-danger" onclick="return  confirm('Delete this data')">Delete</a>
         </div>
     </div>
     @endforeach

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategoriController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\OfficerController;
 use App\Http\Controllers\PaymentController;
 use App\Models\member;
 use Illuminate\Routing\Controllers\Middleware;
@@ -26,14 +27,21 @@ Route::middleware(['admin'])->group(function () {
     Route::get('/admin/edit/member/{id}',[MemberController::class,'edit'])->name('editmember');
     Route::get('/delete/member/{id}',[MemberController::class,'delete'])->name('deletemember');
     Route::get('/payment/admin',[PaymentController::class,'index'])->name('payment');
+    Route::get('/payment/admin/{id}',[PaymentController::class,'detail'])->name('payment-detail');
     Route::post('/update/payment/{id}',[PaymentController::class,'update'])->name('updatepayment');
     Route::post('/update/member/admin/{id}',[MemberController::class,'update'])->name('updatemember');
     Route::get('/search/payment',[PaymentController::class,'indexi'])->name('searchpayment');
     Route::get('/add/payment',[PaymentController::class,'addpy'])->name('addpayment');
+    Route::post('/py/payment/',[PaymentController::class,'py'])->name('addpy');
+    Route::get('/officer',[OfficerController::class,'index'])->name('officer');
+    Route::get('/officer/create',[OfficerController::class,'create'])->name('createofficer');
+    Route::post('/officer/store',[OfficerController::class,'store'])->name('store-OFFICER');
+    Route::get('/officer/delete/{id}',[OfficerController::class,'delete'])->name('deleteofficer');
 });
 Route::middleware(['warga'])->group(function () {
     Route::get('/home/warga/',[MemberController::class,'warga'])->name('homewarga');
     Route::get('/logout/warga/',[MemberController::class,'logout'])->name('logoutwarga');
     Route::get('edit/member/{id}',[MemberController::class,'profile'])->name('profilemember');
     Route::post('update/member/{id}',[MemberController::class,'updateProfile'])->name('updatememberprofile');
+    Route::get('/history/warga/',[MemberController::class,'st'])->name('historywarga');
 });

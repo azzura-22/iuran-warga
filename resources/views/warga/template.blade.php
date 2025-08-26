@@ -38,13 +38,10 @@
         <h2 class="text-center mb-4 text-white">citizen fees</h2>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active text-white" href="">Dashboard</a>
+                <a class="nav-link active text-white" href="{{route('homewarga')}}">Dashboard</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="#">dues</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#">payment</a>
+                <a class="nav-link text-white" href="{{route('historywarga')}}">history payment</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link text-white" href="{{route('logout')}}">logout</a>
